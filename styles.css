@@ -1,0 +1,150 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000; /* Black background */
+    cursor: none; /* Hides the default cursor */
+    position: relative;
+}
+
+/* Glow Effect */
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(162, 0, 255, 0.3);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+    opacity: 0;
+}
+
+/* Small Cursor */
+.small {
+    width: 6px;
+    height: 6px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+}
+
+/* Big Cursor */
+.big {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    background-color: red;
+    animation-name: stretch;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+/* Animation Keyframes */
+@keyframes stretch {
+    0% {
+        opacity: 0.2;
+        background-color: rgb(111, 0, 255);
+        border-radius: 100%;
+    }
+    50% {
+        background-color: rgb(195, 0, 255);
+    }
+    100% {
+        background-color: rgb(93, 14, 139);
+    }
+}
+
+/* Login Container */
+.login-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    /* 3D Effect */
+    transform-style: preserve-3d;
+    /* Adding a subtle shadow for depth */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) perspective(1000px) rotateX(10deg) rotateY(10deg);
+    opacity: 0;
+    animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.input-group input:focus + label {
+    color: #007bff;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
